@@ -2,7 +2,11 @@ import {
   btnForest,
   btnRain,
   btnCoffee,
-  btnFire
+  btnFire,
+  inputForestVolume,
+  inputRainVolume,
+  inputCoffeeVolume,
+  inputFireVolume
 } from './elements.js'
 
 export default function () {
@@ -50,12 +54,40 @@ export default function () {
     : bgAudioFire.pause()
   }
 
+  function setAudioVolume() {
+    bgAudioForest.volume = inputForestVolume.value
+    bgAudioRain.volume = inputRainVolume.value
+    bgAudioCoffee.volume = inputCoffeeVolume.value
+    bgAudioFire.volume = inputFireVolume.value
+  }
+
+  function resetForestVolume() {
+    inputForestVolume.value = 0.5
+  }
+
+  function resetRainVolume() {
+    inputRainVolume.value = 0.5
+  }
+  
+  function resetCoffeeVolume() {
+    inputCoffeeVolume.value = 0.5
+  }
+  
+  function resetFireVolume() {
+    inputFireVolume.value = 0.5
+  }
+
   return {
     pressBtn,
     timeEnd,
     audioForest,
     audioRain,
     audioCoffee,
-    audioFire
+    audioFire,
+    setAudioVolume,
+    resetForestVolume,
+    resetRainVolume,
+    resetCoffeeVolume,
+    resetFireVolume
   }
 }

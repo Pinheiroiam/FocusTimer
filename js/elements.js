@@ -13,6 +13,11 @@ const secondsDisplay = document.querySelector('.seconds')
 const darkTheme = document.querySelector('.darkMode')
 const lightTheme = document.querySelector('.lightMode')
 
+const inputForestVolume = document.querySelector('#forest-volume')
+const inputRainVolume = document.querySelector('#rain-volume')
+const inputCoffeeVolume = document.querySelector('#coffee-volume')
+const inputFireVolume = document.querySelector('#fire-volume')
+
 export {
   body,
   btnPlay,
@@ -24,8 +29,12 @@ export {
   btnRain,
   btnCoffee,
   btnFire,
-  minutesDisplay,
-  secondsDisplay,
   darkTheme,
-  lightTheme
+  lightTheme,
+  inputForestVolume,
+  inputRainVolume,
+  inputCoffeeVolume,
+  inputFireVolume,
+  minutesDisplay,
+  secondsDisplay
 }
