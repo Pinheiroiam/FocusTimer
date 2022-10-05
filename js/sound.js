@@ -10,12 +10,12 @@ import {
 } from './elements.js'
 
 export default function () {
-  const buttonPressAudio = new Audio('../assets/music/audios_button-press.wav')
-  const kitchenTimer = new Audio('../assets/music/audios_kichen-timer.wav')
-  const bgAudioForest = new Audio('../assets/music/Forest.wav')
-  const bgAudioRain = new Audio('../assets/music/rain.wav')
-  const bgAudioCoffee = new Audio('../assets/music/coffee_shop.wav')
-  const bgAudioFire = new Audio('../assets/music/fireplace.wav')
+  const buttonPressAudio = new Audio('https://github.com/Pinheiroiam/FocusTimer/blob/master/assets/music/audios_button-press.wav?raw=true')
+  const kitchenTimer = new Audio('https://github.com/Pinheiroiam/FocusTimer/blob/master/assets/music/audios_kichen-timer.wav?raw=true')
+  const bgAudioForest = new Audio('https://github.com/Pinheiroiam/FocusTimer/blob/master/assets/music/Forest.wav?raw=true')
+  const bgAudioRain = new Audio('https://github.com/Pinheiroiam/FocusTimer/blob/master/assets/music/rain.wav?raw=true')
+  const bgAudioCoffee = new Audio('https://github.com/Pinheiroiam/FocusTimer/blob/master/assets/music/coffee_shop.wav?raw=true')
+  const bgAudioFire = new Audio('https://github.com/Pinheiroiam/FocusTimer/blob/master/assets/music/fireplace.wav?raw=true')
 
   bgAudioForest.loop = true
   bgAudioRain.loop = true
