@@ -6,9 +6,11 @@
 
 :root {
   --bg-color: #e6e6e680;
-  --bg-timer-display: rgb(93, 93, 94);;
+  --bg-timer-display: rgb(93, 93, 94);
   --bg-button: hsla(240, 9%, 89%, 1);
+  --bg-button-theme: hsla(240, 9%, 89%, 0.5);
   --bg-button-press: #02799D;
+  --tt-color: #252529;
   --svg-button: #323238;
   --text-color: rgb(69, 62, 62);
   --btn-focus: white;
@@ -34,29 +36,34 @@ body {
   position: absolute;
 }
 
-#theme {
-  width: 4.4rem;
-  height: 4.4rem;
+.button-Theme {
+  width: 5rem;
+  height: 5rem;
+  background-color: var(--bg-button-theme);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
   position: absolute;
   z-index: 2;
-  top: 2.4rem;
-  right: 3.4rem;
+  top: 3rem;
+  right: 3rem;
 }
 
-/* #theme a {
-  position: relative; 
-  display: grid;
-  place-content: center;
-} */
+.button-Theme a {
+  width: 4.4rem;
+  height: 4.4rem;
+  margin-top: 0.2rem;
+}
 
 h1 {
   background-color: var(--bg-color);
+  color: var(--tt-color);
   padding: 1rem 0;
   margin-bottom: 2rem;
   margin-top: 3rem;
   text-align: center;
   border-radius: 1rem;
-  font-size: clamp( 1rem, 2rem + 12vw, 2rem );
+  font-size: clamp( 1.6rem, 2rem + 12vw, 2rem );
   font-weight: 700;
 }
 
@@ -105,8 +112,8 @@ main {
 }
 
 #controls button svg {
-  width: 4.8rem;
-  height: 4.8rem;
+  width: 4rem;
+  height: 4rem;
   background-color: transparent;
   border: none;
   border-radius: 100%;
@@ -134,11 +141,15 @@ main {
 
 .card {
   width: 14rem;
-  height: 13rem;
+  height: 15rem;
   background-color: var(--bg-button);
   border: none;
   border-radius: 24px;
   cursor: pointer;
+}
+
+.card svg {
+  margin: 1.6rem;
 }
 
 .active {
@@ -148,6 +159,47 @@ main {
 path {
   fill: var(--svg-button);
 }
+
+input[type="range"] {
+  /* -webkit-appearance: none; */
+  width: 10rem;
+  cursor: pointer;
+  background: transparent;
+  bottom: clamp(1rem, 1.2vw, 2.4rem);
+  left: calc(0% - clamp(6rem, 7vw, 9rem) / 2);
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  /* -webkit-appearance: none; */
+  
+  /* width: clamp(6rem, 7vw, 9rem); */
+  height: clamp(.4rem, .4vw, .4rem);
+  /* border-radius: .5rem; */
+
+  background-color: var(--bg-color);
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  /* -webkit-appearance: none; */
+  
+  width: clamp(1.1rem, 1.3vw, 1.6rem);
+  height: clamp(1.1rem, 1.3vw, 1.6rem);
+  border-radius: 50%;
+  
+  background-color: var(--bg-color);
+
+  position: relative;
+  top: calc(0% - clamp(1.1rem, 1.3vw, 1.6rem) / 2);
+}
+
+
+
+input[type="range"]::-webkit-slider-runnable-track, 
+input[type="range"]::-webkit-slider-thumb {
+  color: var(--bg-color);
+}
+
+
 
 img {
   position: fixed;

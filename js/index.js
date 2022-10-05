@@ -16,7 +16,11 @@ import {
   minutesDisplay,
   secondsDisplay,
   darkTheme,
-  lightTheme
+  lightTheme,
+  inputForestVolume,
+  inputRainVolume,
+  inputCoffeeVolume,
+  inputFireVolume
 } from './elements.js'
 
 const controls = Controls({
@@ -102,3 +106,8 @@ lightTheme.addEventListener('click', () => {
 darkTheme.addEventListener('click', () => {
   controls.darkMode()
 })
+
+inputForestVolume.addEventListener('input', sound.setAudioVolume)
+inputRainVolume.addEventListener('input', sound.setAudioVolume)
+inputCoffeeVolume.addEventListener('input', sound.setAudioVolume)
+inputFireVolume.addEventListener('input', sound.setAudioVolume)
