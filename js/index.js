@@ -3,6 +3,7 @@ import Timer from './timer.js'
 import Sound from './sound.js'
 import Image from './image.js'
 import {
+  body,
   btnPlay,
   btnPause,
   btnStop,
@@ -14,10 +15,8 @@ import {
   btnFire,
   minutesDisplay,
   secondsDisplay,
-  soundOutForest,
-  soundOutRain,
-  soundOutCoffee,
-  soundOutFire
+  darkTheme,
+  lightTheme
 } from './elements.js'
 
 const controls = Controls({
@@ -29,10 +28,9 @@ const controls = Controls({
   btnRain,
   btnCoffee,
   btnFire,
-  soundOutForest,
-  soundOutRain,
-  soundOutCoffee,
-  soundOutFire
+  lightTheme,
+  darkTheme,
+  body
 })
 
 const timer = Timer({
@@ -94,4 +92,13 @@ btnFire.addEventListener('click', function () {
   controls.clickedFire()
   sound.audioFire()
   image.imageFireplace()
+})
+
+
+lightTheme.addEventListener('click', () => {
+  controls.darkMode()
+})
+
+darkTheme.addEventListener('click', () => {
+  controls.darkMode()
 })

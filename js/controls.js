@@ -5,6 +5,9 @@ export default function Controls({
   btnRain,
   btnCoffee,
   btnFire,
+  lightTheme,
+  darkTheme,
+  body
 }) {
   function play() {
     btnPlay.classList.add('hide')
@@ -36,7 +39,15 @@ export default function Controls({
   function clickedFire() {
     btnFire.classList.toggle('active')
   }
+
+  function darkMode() {
+    body.classList.toggle('dark')
+    darkTheme.classList.toggle('hide')
+    lightTheme.classList.toggle('hide')
+  }
   
+
+
   return {
     play,
     pause,
@@ -45,5 +56,6 @@ export default function Controls({
     clickedRain,
     clickedCoffee,
     clickedFire,
+    darkMode
   }
 }

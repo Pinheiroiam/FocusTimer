@@ -1,3 +1,4 @@
+const body = document.querySelector('body')
 const btnPlay = document.querySelector('.play')
 const btnPause = document.querySelector('.pause')
 const btnStop = document.querySelector('.stop')
@@ -9,12 +10,11 @@ const btnCoffee = document.querySelector('#coffee')
 const btnFire = document.querySelector('#fire')
 const minutesDisplay = document.querySelector('.minutes')
 const secondsDisplay = document.querySelector('.seconds')
-const soundOutForest = document.querySelector('.pauseSoundForest')
-const soundOutRain = document.querySelector('.pauseSoundRain')
-const soundOutCoffee = document.querySelector('.pauseSoundCoffee')
-const soundOutFire = document.querySelector('.pauseSoundFire')
+const darkTheme = document.querySelector('.darkMode')
+const lightTheme = document.querySelector('.lightMode')
 
 export {
+  body,
   btnPlay,
   btnPause,
   btnStop,
@@ -26,8 +26,6 @@ export {
   btnFire,
   minutesDisplay,
   secondsDisplay,
-  soundOutForest,
-  soundOutRain,
-  soundOutCoffee,
-  soundOutFire
+  darkTheme,
+  lightTheme
 }

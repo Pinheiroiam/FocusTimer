@@ -5,69 +5,96 @@
 }
 
 :root {
-  --bg-color: hsla(0, 0%, 100%, 0.6);
+  --bg-color: #e6e6e680;
+  --bg-timer-display: rgb(93, 93, 94);;
   --bg-button: hsla(240, 9%, 89%, 1);
   --bg-button-press: #02799D;
+  --svg-button: #323238;
   --text-color: rgb(69, 62, 62);
   --btn-focus: white;
   font-family: 'Roboto', sans-serif;
   font-size: 62.5%;
 }
 
+.dark {
+  --bg-color-darkTheme: hsla(0, 3%, 6%, 0.8);
+  --bg-button: #29292E;
+  --bg-button-press: #0A3442;
+  --svg-button: #C4C4CC;
+  --text-color: rgb(69, 69, 70);
+}
+
 body {
   color: var(--text-color);
+  width: 100%;
   height: 100vh;
   display: grid;
   place-content: center;
-  background: #0d0f1b no-repeat center;
+  background: var(--bg-color-darkTheme) no-repeat center;
+  position: absolute;
 }
+
+#theme {
+  width: 4.4rem;
+  height: 4.4rem;
+  position: absolute;
+  z-index: 2;
+  top: 2.4rem;
+  right: 3.4rem;
+}
+
+/* #theme a {
+  position: relative; 
+  display: grid;
+  place-content: center;
+} */
 
 h1 {
   background-color: var(--bg-color);
-  padding: 3rem;
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+  margin-top: 3rem;
   text-align: center;
-  border-radius: 4rem;
-  margin-bottom: 4rem;
-  font-size: 4rem;
+  border-radius: 1rem;
+  font-size: clamp( 1rem, 2rem + 12vw, 2rem );
   font-weight: 700;
 }
 
 main {
+  width: 33rem;
   background-color: var(--bg-color);
-  padding: 4rem;
-  height: 43rem;
-  display: grid;
-  grid-template-columns: 3fr 2fr;
-  justify-self: center;
-  gap: 4rem;
-  border-radius: 4rem;
+  padding: 2rem 1rem;
+  border-radius: 1rem;
 }
 
 #timerDisplay {
   margin: auto;
-} 
+}
 
 #timer {
   background-color: var(--bg-button);
-  padding: 0 4rem;
-  margin-bottom: 4rem;
+  color: var(--svg-button);
+  padding: 1rem 3rem;
+  margin-bottom: 2rem;
   border-radius: 24px;
-  font-size: clamp(3.2rem, 2rem + 12vw, 12.8rem);
+  font-size: clamp(2.2rem, 2rem + 12vw, 12.8rem);
   font-weight: 400;
   display: flex;
+  justify-content: center;
 }
 
 #controls {
   background: var(--bg-button);
-  padding: 2rem 4rem;
+  padding: 2rem 2rem;
+  margin-bottom: 2rem;
   width: 100%;
-  border-radius: 24px;
+  border-radius: 2.4rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
 }
-
+ 
 #controls button {
   width: 4.8rem;
   height: 4.8rem;
@@ -86,7 +113,6 @@ main {
   cursor: pointer;
 }
 
-
 #controls button:nth-child(2) svg{
   width: 5.2rem;
   height: 5.3rem;
@@ -102,26 +128,25 @@ main {
   display: grid;
   grid-template: 1fr 1fr / 1fr 1fr ;
   place-items: center;
-  gap: 3.2rem;
+  gap: 1.6rem;
   position: relative;
 }
 
 .card {
-  width: 13.8rem;
-  height: 15.2rem;
+  width: 14rem;
+  height: 13rem;
   background-color: var(--bg-button);
   border: none;
   border-radius: 24px;
   cursor: pointer;
-  
 }
 
 .active {
   background-color: var(--bg-button-press);
 }
 
-.active svg path {
-  fill: white;
+path {
+  fill: var(--svg-button);
 }
 
 img {
@@ -135,11 +160,56 @@ img {
   animation: gradiente 0.2s forwards;
 }
 
+.darkThemeBG {
+  background-color: var(--bg-color-darkTheme);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -2;
+}
+
 @keyframes gradiente {
   from {
     opacity: 0;
   }
   to {
     opacity: 1;
+  }
+}
+
+@media screen and (min-width: 400px) {
+  main {
+    width: 36rem;
+  }
+
+  .card {
+    width: 16rem;
+  }
+}
+
+@media screen and (min-width: 830px) {
+  main {
+    width: 80rem;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .card {
+    width: 15rem;
+  }
+
+  #timerDisplay {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  #timer,
+  #controls {
+    margin: 0;
   }
 }

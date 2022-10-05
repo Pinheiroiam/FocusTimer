@@ -7,29 +7,17 @@ export default function () {
 
   function imageForest() {
     imgForest.classList.toggle('hide')
-    imgRain.classList.add('hide')
-    imgCoffee.classList.add('hide')
-    imgFire.classList.add('hide')
   }
 
   function imageRainy() {
-    imgForest.classList.add('hide')
     imgRain.classList.toggle('hide')
-    imgCoffee.classList.add('hide')
-    imgFire.classList.add('hide')
   }
   
   function imageCoffeeShop() {
-    imgForest.classList.add('hide')
-    imgRain.classList.add('hide')
     imgCoffee.classList.toggle('hide')
-    imgFire.classList.add('hide')
   }
   
   function imageFireplace() {
-    imgForest.classList.add('hide')
-    imgRain.classList.add('hide')
-    imgCoffee.classList.add('hide')
     imgFire.classList.toggle('hide')
   }
 

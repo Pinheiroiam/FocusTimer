@@ -32,6 +32,7 @@ export default function Timer({
       if (isFinished) {
         updateDisplay()
         sound.timeEnd()
+        reset()
         return
       }
 
